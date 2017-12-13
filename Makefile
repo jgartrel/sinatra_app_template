@@ -19,5 +19,8 @@ endif
 test:   ## Run all tests
 	bundle exec rspec $(testargs) ./spec
 
+distclean:  ## Remove all non-versioned files
+	git clean -f -x -d
+
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
