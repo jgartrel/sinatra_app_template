@@ -1,12 +1,15 @@
 #
 # Setup all targets to repeatedly run as tasks
 #
-.PHONEY: all install test run clean distclean
+.PHONEY: all install install-local test run clean distclean
 all: help
 
 install: ## Install bundler dependencies
 	bundle install --path vendor/bundle --binstubs --clean
 	bundle package
+
+install-local: ## Install bundler dependencies from local cache
+	bundle install --path vendor/bundle --binstubs --clean --local
 
 run:    ## Run a development server
 	bundle exec rackup -p 8888
@@ -18,6 +21,9 @@ endif
 
 test:   ## Run all tests
 	bundle exec rspec $(testargs) ./spec
+
+clean:  ## Remove all generated files
+	rm -rf vendor/bundle bin tmp
 
 distclean:  ## Remove all non-versioned files
 	git clean -f -x -d
