@@ -43,9 +43,9 @@ Rbenv can be installed using the instructions located here: https://github.com/r
 
     $ brew install rbenv
     $ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-    $ rbenv install 2.4.2
-    $ echo 2.4.2 >~/.rbenv/version
-    $ gem install -v 1.16.0 bundler
+    $ rbenv install 2.7.0
+    $ echo 2.7.0 >~/.rbenv/version
+    $ gem install -v 2.1.2 bundler
     $ rbenv rehash
 
 ## Appendix B: Install rbenv the harder way
@@ -56,9 +56,9 @@ Rbenv can be installed using the instructions located here: https://github.com/r
     $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 
     $ export PATH=~/.rbenv/shims:~/.rbenv/bin:"$PATH"
-    $ rbenv install 2.4.2
-    $ echo 2.4.2 >~/.rbenv/version
-    $ gem install -v 1.16.0 bundler
+    $ rbenv install 2.7.0
+    $ echo 2.7.0 >~/.rbenv/version
+    $ gem install -v 2.1.2 bundler
     $ rbenv rehash
 
 Also consider running 'rbenv init' or adding rbenv to your path permanantly. Otherwise you will always need to add the above export path manually to your shell before any of the 'make' or binstub commands previously described in this doc.
